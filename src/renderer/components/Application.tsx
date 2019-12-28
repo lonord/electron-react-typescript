@@ -1,13 +1,13 @@
-import { hot } from 'react-hot-loader/root';
-import * as React from 'react';
+import { hot } from 'react-hot-loader/root'
+import * as React from 'react'
 
-import CounterContainer from '../containers/CounterContainer';
+import Counter from './Counter'
 
 const Application = () => (
     <div>
         Hello World from Electron!
-        <CounterContainer />
+        <Counter />
     </div>
-);
+)
 
-export default hot(Application);
+export default hot(Application)

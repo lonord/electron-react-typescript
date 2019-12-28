@@ -2,8 +2,7 @@
     "defaultSeverity": "error",
     "extends": [
         "tslint-config-airbnb",
-        "tslint-react",
-        "tslint-config-prettier"
+        "tslint-react"
     ],
     "jsRules": {},
     "rules": {
@@ -20,7 +19,11 @@
         "jsx-alignment": true,
         "jsx-equals-spacing": [true, "never"],
         "jsx-no-string-ref": true,
-        "jsx-self-close": true
+        "jsx-self-close": true,
+        "semicolon": [
+            true,
+            "never"
+        ]
     },
     "rulesDirectory": []
 }

@@ -1,20 +1,16 @@
-import * as React from 'react';
+import * as React from 'react'
 
-require('./Counter.scss');
-const redCubeImg = require('./RedCube.jpg');
+const { useState } = React
 
-export interface Props {
-    value: number;
+interface Props {
+    value: number
 
-    incrementValue: () => any;
-    decrementValue: () => any;
+    incrementValue: () => any
+    decrementValue: () => any
 }
 
-const Counter: React.FunctionComponent<Props> = ({ value, incrementValue, decrementValue }) => (
+const CounterWidget: React.FunctionComponent<Props> = ({ value, incrementValue, decrementValue }) => (
     <div className="counter">
-        <p>
-            <img src={redCubeImg} />
-        </p>
         <p id="counter-value">Current value: {value}</p>
         <p>
             <button id="increment" onClick={incrementValue}>
@@ -25,6 +21,15 @@ const Counter: React.FunctionComponent<Props> = ({ value, incrementValue, decrem
             </button>
         </p>
     </div>
-);
+)
 
-export default Counter;
+const Counter = () => {
+    const [value, setValue] = useState(0)
+    const incrementValue = () => setValue(value + 1)
+    const decrementValue = () => setValue(value - 1)
+    return (
+        <CounterWidget value={value} incrementValue={incrementValue} decrementValue={decrementValue}/>
+    )
+}
+
+export default Counter
