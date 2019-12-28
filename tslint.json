@@ -2,7 +2,8 @@
     "defaultSeverity": "error",
     "extends": [
         "tslint-config-airbnb",
-        "tslint-react"
+        "tslint-react",
+        "tslint-react-hooks"
     ],
     "jsRules": {},
     "rules": {
@@ -23,7 +24,13 @@
         "semicolon": [
             true,
             "never"
-        ]
+        ],
+        "react-hooks-nesting": {
+            "severity": "error",
+            "options": {
+                "detect-hooks-from-non-react-namespace": true
+            }
+        }
     },
     "rulesDirectory": []
 }
